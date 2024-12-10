@@ -1,1 +1,1 @@
-# Planr-disease-detection
+# Plants-disease-detection
