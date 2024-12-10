@@ -34,7 +34,7 @@ Ensure the following tools and libraries are installed on your machine:
 ### **Installation Steps**
 - Clone the repository
 ```bash
-   git clone [https://github.com/your-repo-name.git](https://github.com/IDRISSELWAANABI/Plants-disease-detection.git)
+   git clone https://github.com/IDRISSELWAANABI/Plants-disease-detection.git
 ````
 - For the model to work, you need first to place this folder **[models](https://drive.google.com/drive/folders/1-Za5nieJ0fxrkLlvul18skvTfdV0JcKF?usp=sharing)** in /Green/static
 - Create a virtual evironment
@@ -42,8 +42,7 @@ Ensure the following tools and libraries are installed on your machine:
   python3 -m venv venv
   source venv/bin/activate
   ````
-- Install the Required Packages**
-Run the following command to install all necessary dependencies:
+- Install the Required Packages
 ```bash
 pip install -r requirements.txt
 ````
