@@ -3,6 +3,8 @@
 A robust system designed to detect and analyze plant diseases with ease.
 
 ---
+![Plant Disease Detection](./plant-disease.png)
+
 
 ## 🌟 **Features**
 - ✅ Accurately detects diseases in a wide range of plants.
