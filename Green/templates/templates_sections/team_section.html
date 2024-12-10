@@ -1,0 +1,36 @@
+<section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Meet Our Team</h2>
+        <p>Get to know the team behind our innovative plant disease identification and prevention services. Our experienced and dedicated professionals are passionate about delivering high-quality solutions to our customers. Learn more about our team and their expertise in agriculture, technology, and data science. </p>
+      </div>
+
+      <div class="slider">
+        <div class="row slick_slide">
+          {% for member in TEAM_MEMBERS%}
+            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+              <div class="member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="{{url_for('static',filename=member['img_url'])}}" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>{{member['name']}}</h4>
+                  <span>Data Engineer Student</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>
+
+
+

@@ -1,0 +1,134 @@
+:root {
+    --card-width: 200px;
+  }
+  .choosing-plant-title{
+    margin-top: 110px;
+    font-size: 28px;
+    text-align: center;
+  }
+  .cards-container{
+    margin-top: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .plant{
+    /*flex-basis: calc(25%);  10px de marge entre les cartes */
+    margin:3px;
+    margin-bottom: 204px; /* pour ajouter de l'espace entre les lignes */
+
+  }
+  
+
+  .card-link{
+    text-decoration: none; 
+    /* border:none; 
+    cursor: pointer;
+    background-color: transparent; */
+    
+  }
+  .card {
+    width: var(--card-width);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    perspective: 2500px;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: var(--card-width);
+    object-fit: cover;
+    border: none;
+    transition: all 0.5s;
+    border-radius: 9px;
+
+  }
+  .card:hover .cover-image{
+    border-radius: 0px;
+
+  }
+  .wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  .wrapper::before,
+  .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+  }
+  .wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  .wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  
+  .card:hover .wrapper::before,
+  .wrapper::after {
+    opacity: 1;
+  }
+
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    position: absolute;
+    margin-top: 165px;
+    font-weight: bold;
+    font-family: 'Dancing Script';
+    text-transform: uppercase;
+    text-shadow: #191c29;
+    transition: transform 0.5s;    
+    color: #fafcf8;
+  }
+  .card:hover .title {
+    transform: translate3d(0%, -50px, 100px);
+    margin-top: 200px;
+    font-size: 27px;
+  }
+  
+  .character {
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+    
+  }
+  
+  .card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+  }
+  
+

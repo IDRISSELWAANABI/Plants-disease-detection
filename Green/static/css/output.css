@@ -1,0 +1,76 @@
+.output{
+  margin-top: 50px;
+}
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.gallery {
+    overflow: hidden;
+  }
+  
+  .gallery .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .gallery .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid #7acf24;
+  }
+  
+  .gallery .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #7acf24;
+  }
+  
+  .gallery .swiper-slide-active {
+    text-align: center;
+  }
+  
+  @media (min-width: 992px) {
+    .gallery .swiper-wrapper {
+      padding: 40px 0;
+    }
+  
+    .gallery .swiper-slide-active {
+      border: 6px solid #7acf24;
+      padding: 4px;
+      background: #fff;
+      z-index: 1;
+      transform: scale(1.2);
+      margin-top: 10px;
+    }
+  }
+  
+  .gallery .img-fluid{
+    height: 137px;
+  }
+
+
+/*--------------------------------------------------------------
+# companies
+--------------------------------------------------------------*/
+.companies {
+    background: #f6f7ff;
+    padding: 15px 0;
+    text-align: center;
+  }
+  
+  .companies img {
+    max-width: 45%;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    padding: 15px 0;
+  }
+  
+  .companies img:hover {
+    transform: scale(1.15);
+  }
+  
+  @media (max-width: 768px) {
+    .companies img {
+      max-width: 40%;
+    }
+  }

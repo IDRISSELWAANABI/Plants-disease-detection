@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% block styles %}
+    <link href="{{url_for('static',filename='css/get_started.css')}}" rel="stylesheet">
+{% endblock styles %}
+
+{% block content %}
+<div class='get-started-container'>
+    <section id="appointment" class="appointment section-bg">
+        <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Get started</h2>
+            <p>Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started Desciption of get started </p>
+        </div>
+
+        <form id='my-form' action="{{url_for('give_disease_name')}}" enctype="multipart/form-data" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
+            <div class="row">
+            <div class="col-md-4 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" >
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="job" id="job" placeholder="Your Job" >
+            </div>
+            <div class="text-center"><br>
+            <input class="custom-file-input" type="file" name='plant-img'>
+            <button type="submit" >Submit</button>
+            </div>
+        </form>
+
+        </div>
+    </section>
+
+    <div id="cs-loader" class="cs-loader" style='display:none'>
+        <div class="cs-loader-inner">
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+            <label>●</label>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="  {{url_for('static',filename='js/get_started.js')}}"></script>
+{% endblock scripts %}

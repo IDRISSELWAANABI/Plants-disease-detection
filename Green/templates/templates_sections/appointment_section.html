@@ -1,0 +1,17 @@
+<section id="appointment" class="appointment section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Get started</h2>
+      <p>Start diagnosing and protecting your plants today with our easy-to-use platform. Simply upload images of your plants and receive detailed analysis and recommendations. Get started now and take control of your plant health.</p>
+    </div>
+        
+    <div class="text-center"><br>
+      <!-- Corrected button using url_for to link to choosing_plant endpoint -->
+      <form action="{{ url_for('choosing_plant') }}" method="GET">
+        <button type="submit" class="get-started-btn">Get started</button>
+      </form>
+    </div>
+
+  </div>
+</section>

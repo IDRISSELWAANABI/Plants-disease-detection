@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block styles %}
+    <link href="static/css/card-style.css" rel="stylesheet">
+{% endblock styles %}
+
+{% block content %}
+<h1 class='choosing-plant-title'>Choose your plant</h1>
+<div class='cards-container'>
+    {% for _plant,url in PLANTS_IMGS.items() %}
+        <div class='plant'>
+            <a class="card-link" href="{{url_for('get_started',plant=_plant)}}">
+                <div class="card">
+                    <div class="wrapper">
+                        <img class="cover-image" src="{{url_for('static',filename=url['cover'])}}"  />
+                    </div>
+                    <img class="character" src="{{url_for('static',filename=url['plant'])}}"/>
+                    <div class="title">{{_plant}}</div>
+                </div>
+            </a>
+        </div> 
+    {% endfor %}   
+</div>
+
+{% endblock content %}
+
+
+{% block scripts %}
+    <script src="{{url_for('static',filename='js/card-js.js')}}"></script>
+{% endblock scripts %}

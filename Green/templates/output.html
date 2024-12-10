@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+{% block styles %}
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+{% endblock styles %}
+
+{% block content %}
+<!-- ======= output Section ======= -->
+<section id="output" class="output">
+  <div class="row">
+      <div class="col-lg-6" data-aos="fade-right">
+          <img src="{{url_for('static',filename=disease_data['input_img'])}}" class="img-fluid" alt="" style="height:100%">
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3 style='text-transform: capitalize;'>{{disease_data['name']}} Malady</h3>
+          <p>{{disease_data['description']}}</p>
+      </div>
+  </div>
+</section><!-- End output Section -->
+
+<!-- ======= Gallery Section ======= -->
+<section id="gallery" class="gallery">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Gallery</h2>
+            <p>Description of Gallery section Description of Gallery section Description of Gallery section 
+            Description of Gallery section Description of Gallery section Description of Gallery section  </p>
+        </div>
+
+        <div class="gallery-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              {% for n_img in range(1,9) %}
+                <div class="swiper-slide"><a class="gallery-lightbox" href="{{url_for('static',filename='img/gallery/'+disease_data['gallery_dir']+'/gallery-'+n_img|string+'.jpg')}}"><img src="{{url_for('static',filename='img/gallery/'+disease_data['gallery_dir']+'/gallery-'+n_img|string+'.jpg')}}" class="img-fluid" alt=""></a></div>
+              {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section><!-- End Gallery Section -->
+
+<!-- ======= Doctors Section ======= -->
+<section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Agronomists</h2>
+        <p>Description of Agronomists section Description of Agronomists section 
+          Description of Agronomists section Description of Agronomists section 
+          Description of Agronomists section Description of Agronomists section 
+          Description of Agronomists section Description of Agronomists section 
+          Description of Agronomists section </p>
+      </div>
+
+      <div class="row">
+        {% for doctor in DOCTORS%}
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{{url_for('static',filename=doctor['img_url'])}}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{doctor['name']}}</h4>
+                <span>{{doctor['description']}}</span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+</section> <!-- End Doctors Section -->
+
+<!-- ======= companies Section ======= -->
+<section id="companies" class="companies">
+  <div class="container" data-aos="zoom-in">
+    <div class="section-title">
+      <h2>agrochemical companies</h2>
+      <p>Description of agrochemical companies section Description of agrochemical companies section Description of agrochemical companies section 
+      Description of agrochemical companies section</p>
+    </div>
+
+    <div class="row">
+      <a target='_blank' href='https://www.roche.com/' class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="{{url_for('static',filename='img/companies/company-1.png')}}" class="img-fluid" alt="">
+      </a>
+      <a target='_blank' href='https://www.bayer.com/en/' class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="{{url_for('static',filename='img/companies/company-2.png')}}" class="img-fluid" alt="">
+      </a>
+      <a target='_blank' href='https://www.coopercos.com/' class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="{{url_for('static',filename='img/companies/company-3.png')}}" class="img-fluid" alt="">
+      </a>
+      <a target='_blank' href='https://www.genpharma.ma/en/' class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="{{url_for('static',filename='img/companies/company-4.png')}}" class="img-fluid" alt="">
+      </a>
+      <a target='_blank' href='https://maphar.ma/' class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="{{url_for('static',filename='img/companies/company-5.png')}}" class="img-fluid" alt="">
+      </a>
+      <a target='_blank' href='https://www.pfizer.com/' class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+        <img src="{{url_for('static',filename='img/companies/company-6.png')}}" class="img-fluid" alt="">
+      </a>
+    </div>
+
+  </div>
+</section><!-- End companies Section -->
+{% endblock content %}
